@@ -1,0 +1,28 @@
+.container {
+	width: 100%;
+}
+.mainer {
+	width: 1200px;
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+}
+.run-c {
+	width: 1020px;
+	height: 20px;
+	border: solid 5px #000;
+	margin-top: 30px;
+	position: relative;
+}
+.man {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-weight: bold;
+	background-color: red;
+	color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+}

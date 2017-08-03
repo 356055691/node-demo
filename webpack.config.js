@@ -1,5 +1,9 @@
 //webpack.config.js
-let entery = {'vue': './public/javascripts/vue/index.js', 'hbs': './public/javascripts/hbs/index.js'};
+let entery = {
+        'vue': './public/javascripts/vue/index.js', 
+        'hbs': './public/javascripts/hbs/index.js',
+        'games': './public/javascripts/games/index.js'
+    };
 
 module.exports = {
     entry : entery,//入口文件
