@@ -1,8 +1,9 @@
 //webpack.config.js
 let entery = {
-        'vue': './public/javascripts/vue/index.js', 
-        'hbs': './public/javascripts/hbs/index.js',
-        'games': './public/javascripts/games/index.js'
+        'index': './public/js/index/index.js', 
+        'vue': './public/js/vue/index.js', 
+        'hbs': './public/js/hbs/index.js',
+        'games': './public/js/games/index.js'
     };
 
 module.exports = {

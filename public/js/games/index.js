@@ -1,5 +1,5 @@
 
-require('../../stylesheets/games/style.css');
+require('../../css/games/style.css');
 var $ = require("jquery");
 
 $(

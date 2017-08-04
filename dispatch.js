@@ -1,6 +1,6 @@
 
 module.exports = app => {
-    var index = require('./routes/index');
+    var index = require('./apps/index/index');
     var users = require('./routes/users');
     var vue = require('./apps/vue');
     var hbs = require('./apps/hbs/index');
