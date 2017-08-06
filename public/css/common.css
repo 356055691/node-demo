@@ -5,14 +5,19 @@
 	font-size: 12px;
 	font-family: 'Microsoft YaHei';
 	list-style-type: none;
+	outline: none;
 }
 html, body {
 	background-color: #fdde2c;
+}
+input[type='button'] {
+	cursor: pointer;
 }
 .container {
 	width: 100%;
 	min-width: 1200px;
 	height: 100%;
+	padding-bottom: 30px;
 }
 .mainer {
 	width: 1200px;

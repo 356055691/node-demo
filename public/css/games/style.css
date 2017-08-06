@@ -1,28 +1,61 @@
-.container {
-	width: 100%;
-}
-.mainer {
-	width: 1200px;
-	height: auto;
-	margin: 0 auto;
+.table {
+	width: 1010px;
+	height: 510px;
+	border: solid 5px black;
+	margin: 20px auto;
+	background-color: #ccc;
 	position: relative;
+	overflow: hidden;
 }
-.run-c {
-	width: 1020px;
-	height: 20px;
-	border: solid 5px #000;
-	margin-top: 30px;
-	position: relative;
-}
-.man {
-	width: 20px;
-	height: 20px;
-	line-height: 20px;
-	text-align: center;
-	font-weight: bold;
-	background-color: red;
-	color: white;
+.item {
+	width: 10px;
+	height: 10px;
+	background-color: #000;
 	position: absolute;
-	top: 0;
-	left: 0;
+}
+.point {
+	width: 10px;
+	height: 10px;
+	background-color: #000;
+	position: absolute;
+}
+.btn-c {
+	height: 100px;
+	padding: 0 100px;
+}
+.start-btn {
+	width: 100px;
+	height: 30px;
+	background-color: #000;
+	color: #fdde2c;
+	float: right;
+}
+.stop {
+	width: 100px;
+	height: 30px;
+	background-color: #000;
+	color: #fdde2c;
+	float: right;
+	margin-right: 10px;
+}
+.speed {
+	width: 100px;
+	height: 30px;
+	background-color: #000;
+	color: #fdde2c;
+	float: right;
+	margin-right: 10px;
+}
+.score-c {
+	float: left;
+}
+.score-c .tip {
+	color: #000;
+	font-weight: bold;
+	font-size: 20px;
+}
+.score-c .score {
+	color: red;
+	font-weight: bold;
+	font-size: 20px;
 }
