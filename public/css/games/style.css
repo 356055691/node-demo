@@ -8,10 +8,11 @@
 	overflow: hidden;
 }
 .item {
-	width: 10px;
-	height: 10px;
-	background-color: #000;
+	width: 6px;
+	height: 6px;
+	background-color: #fff;
 	position: absolute;
+	border: solid 2px #000;
 }
 .point {
 	width: 10px;
@@ -30,15 +31,23 @@
 	color: #fdde2c;
 	float: right;
 }
-.stop {
-	width: 100px;
+.speed-label {
+	width: 150px;
 	height: 30px;
-	background-color: #000;
-	color: #fdde2c;
+	line-height: 30px;
+	text-align: right;
+	color: #000;
 	float: right;
-	margin-right: 10px;
 }
 .speed {
+	width: 96px;
+	height: 26px;
+	border: solid 2px  #000;
+	color: #000;
+	text-align: center;
+	float: right;
+}
+.chan-speed {
 	width: 100px;
 	height: 30px;
 	background-color: #000;

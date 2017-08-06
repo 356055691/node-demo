@@ -619,10 +619,7 @@ runObj = {
 		this.$startBtn.on('click', function () {
 			that.go();
 		});
-		$('.stop').on('click', function () {
-			that.stop();
-		});
-		$('.speed').on('click', function () {
+		$('.chan-speed').on('click', function () {
 			var $this = $(this);
 
 			that.choseSpeed($this);
@@ -641,11 +638,16 @@ runObj = {
 		this.limitX = 0;
 		this.limitY = 0;
 		this.score = 0;
-		this.speed = 1000;
 	},
 	go: function () {
 		var that = this;
 
+		clearInterval(this.autoGo);
+		this.speed = $('.speed').val();
+		if (!this.speed) {
+			alert('麻烦先选个速度呗～～');
+			return false;
+		}
 		if (this.$startBtn.hasClass('restart')) {
 			clearInterval(this.autoGo);
 			this.init();
@@ -683,25 +685,25 @@ runObj = {
 
 		if (this.right < 0) {
 			this.thisLimit = [{ x: this.limitX, y: this.limitY }];
-			if (this.thisLimit[0].x === this.pointLimit[1].x && this.thisLimit[0].y + 10 === this.pointLimit[1].y) {
+			if (this.thisLimit[0].x === this.pointLimit[0].x && this.thisLimit[0].y === this.pointLimit[0].y) {
 				that.ok();
 			}
 		}
 		if (this.down < 0) {
 			this.thisLimit = [{ x: this.limitX, y: this.limitY }];
-			if (this.thisLimit[0].x + 10 === this.pointLimit[1].x && this.thisLimit[0].y === this.pointLimit[1].y) {
+			if (this.thisLimit[0].x === this.pointLimit[0].x && this.thisLimit[0].y === this.pointLimit[0].y) {
 				that.ok();
 			}
 		}
 		if (this.right > 0) {
 			this.thisLimit = [{ x: this.limitX, y: this.limitY }];
-			if (this.thisLimit[0].x + 10 === this.pointLimit[0].x && this.thisLimit[0].y === this.pointLimit[0].y) {
+			if (this.thisLimit[0].x === this.pointLimit[0].x && this.thisLimit[0].y === this.pointLimit[0].y) {
 				that.ok();
 			}
 		}
 		if (this.down > 0) {
 			this.thisLimit = [{ x: this.limitX, y: this.limitY }];
-			if (this.thisLimit[0].x === this.pointLimit[0].x && this.thisLimit[0].y + 10 === this.pointLimit[0].y) {
+			if (this.thisLimit[0].x === this.pointLimit[0].x && this.thisLimit[0].y === this.pointLimit[0].y) {
 				that.ok();
 			}
 		}
@@ -771,13 +773,10 @@ runObj = {
 		this.score++;
 		$('.score').html(this.score);
 	},
-	stop: function () {
-		alert('这都要暂停，太菜了吧～～～');
-	},
 	choseSpeed: function (obj) {
-		var newSpeed = obj.data('speed');
-
-		this.speed = newSpeed;
+		clearInterval(this.autoGo);
+		this.speed = $('.speed').val();
+		this.go();
 	}
 };
 
@@ -825,7 +824,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, ".table {\n\twidth: 1010px;\n\theight: 510px;\n\tborder: solid 5px black;\n\tmargin: 20px auto;\n\tbackground-color: #ccc;\n\tposition: relative;\n\toverflow: hidden;\n}\n.item {\n\twidth: 10px;\n\theight: 10px;\n\tbackground-color: #000;\n\tposition: absolute;\n}\n.point {\n\twidth: 10px;\n\theight: 10px;\n\tbackground-color: #000;\n\tposition: absolute;\n}\n.btn-c {\n\theight: 100px;\n\tpadding: 0 100px;\n}\n.start-btn {\n\twidth: 100px;\n\theight: 30px;\n\tbackground-color: #000;\n\tcolor: #fdde2c;\n\tfloat: right;\n}\n.stop {\n\twidth: 100px;\n\theight: 30px;\n\tbackground-color: #000;\n\tcolor: #fdde2c;\n\tfloat: right;\n\tmargin-right: 10px;\n}\n.speed {\n\twidth: 100px;\n\theight: 30px;\n\tbackground-color: #000;\n\tcolor: #fdde2c;\n\tfloat: right;\n\tmargin-right: 10px;\n}\n.score-c {\n\tfloat: left;\n}\n.score-c .tip {\n\tcolor: #000;\n\tfont-weight: bold;\n\tfont-size: 20px;\n}\n.score-c .score {\n\tcolor: red;\n\tfont-weight: bold;\n\tfont-size: 20px;\n}", ""]);
+exports.push([module.i, ".table {\n\twidth: 1010px;\n\theight: 510px;\n\tborder: solid 5px black;\n\tmargin: 20px auto;\n\tbackground-color: #ccc;\n\tposition: relative;\n\toverflow: hidden;\n}\n.item {\n\twidth: 6px;\n\theight: 6px;\n\tbackground-color: #fff;\n\tposition: absolute;\n\tborder: solid 2px #000;\n}\n.point {\n\twidth: 10px;\n\theight: 10px;\n\tbackground-color: #000;\n\tposition: absolute;\n}\n.btn-c {\n\theight: 100px;\n\tpadding: 0 100px;\n}\n.start-btn {\n\twidth: 100px;\n\theight: 30px;\n\tbackground-color: #000;\n\tcolor: #fdde2c;\n\tfloat: right;\n}\n.speed-label {\n\twidth: 150px;\n\theight: 30px;\n\tline-height: 30px;\n\ttext-align: right;\n\tcolor: #000;\n\tfloat: right;\n}\n.speed {\n\twidth: 96px;\n\theight: 26px;\n\tborder: solid 2px  #000;\n\tcolor: #000;\n\ttext-align: center;\n\tfloat: right;\n}\n.chan-speed {\n\twidth: 100px;\n\theight: 30px;\n\tbackground-color: #000;\n\tcolor: #fdde2c;\n\tfloat: right;\n\tmargin-right: 10px;\n}\n.score-c {\n\tfloat: left;\n}\n.score-c .tip {\n\tcolor: #000;\n\tfont-weight: bold;\n\tfont-size: 20px;\n}\n.score-c .score {\n\tcolor: red;\n\tfont-weight: bold;\n\tfont-size: 20px;\n}", ""]);
 
 // exports
 

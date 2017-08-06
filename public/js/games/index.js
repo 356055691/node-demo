@@ -11,10 +11,7 @@ runObj = {
 		this.$startBtn.on('click', function() {
 			that.go();
 		});
-		$('.stop').on('click', function() {
-			that.stop();
-		});
-		$('.speed').on('click', function() {
+		$('.chan-speed').on('click', function() {
 			var $this = $(this);
 
 			that.choseSpeed($this);
@@ -33,11 +30,16 @@ runObj = {
 		this.limitX = 0;
 		this.limitY = 0;
 		this.score = 0;
-		this.speed = 1000;
 	},
     go: function() {
     	var that = this;
 
+    	clearInterval(this.autoGo);
+		this.speed = $('.speed').val();
+    	if (!this.speed) {
+    		alert('麻烦先选个速度呗～～');
+    		return false;
+    	}
     	if (this.$startBtn.hasClass('restart')) {
     		clearInterval(this.autoGo);
     		this.init();
@@ -81,7 +83,7 @@ runObj = {
 			this.thisLimit = [
 				{x: this.limitX, y: this.limitY}
 			];
-			if (this.thisLimit[0].x === this.pointLimit[1].x && this.thisLimit[0].y + 10 === this.pointLimit[1].y) {
+			if (this.thisLimit[0].x === this.pointLimit[0].x && this.thisLimit[0].y === this.pointLimit[0].y) {
 				that.ok();
 			}
 		}
@@ -89,7 +91,7 @@ runObj = {
 			this.thisLimit = [
 				{x: this.limitX, y: this.limitY}
 			];
-			if (this.thisLimit[0].x + 10 === this.pointLimit[1].x && this.thisLimit[0].y === this.pointLimit[1].y) {
+			if (this.thisLimit[0].x === this.pointLimit[0].x && this.thisLimit[0].y === this.pointLimit[0].y) {
 				that.ok();
 			}
 		}
@@ -97,7 +99,7 @@ runObj = {
 			this.thisLimit = [
 				{x: this.limitX, y: this.limitY}
 			];
-			if (this.thisLimit[0].x + 10 === this.pointLimit[0].x && this.thisLimit[0].y === this.pointLimit[0].y) {
+			if (this.thisLimit[0].x === this.pointLimit[0].x && this.thisLimit[0].y === this.pointLimit[0].y) {
 				that.ok();
 			}
 		}
@@ -105,7 +107,7 @@ runObj = {
 			this.thisLimit = [
 				{x: this.limitX, y: this.limitY}
 			];
-			if (this.thisLimit[0].x === this.pointLimit[0].x && this.thisLimit[0].y + 10 === this.pointLimit[0].y) {
+			if (this.thisLimit[0].x === this.pointLimit[0].x && this.thisLimit[0].y === this.pointLimit[0].y) {
 				that.ok();
 			}
 		}
@@ -178,13 +180,10 @@ runObj = {
 		this.score ++;
 		$('.score').html(this.score);
 	},
-	stop: function() {
-		alert('这都要暂停，太菜了吧～～～');
-	},
 	choseSpeed: function(obj) {
-		var newSpeed = obj.data('speed');
-
-		this.speed = newSpeed;
+		clearInterval(this.autoGo);
+		this.speed = $('.speed').val();
+		this.go();
 	}
 };
 
