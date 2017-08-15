@@ -599,7 +599,6 @@ module.exports = function (css) {
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-alert('vue');
 __webpack_require__(5);
 __webpack_require__(6);
 
@@ -607,7 +606,7 @@ __webpack_require__(6);
 /* 5 */
 /***/ (function(module, exports) {
 
-alert('index');
+
 
 /***/ }),
 /* 6 */
@@ -630,8 +629,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./style.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./style.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/postcss-loader/lib/index.js??ref--1-2!./style.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/postcss-loader/lib/index.js??ref--1-2!./style.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -649,7 +648,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "html, body {\n\tbackground-color: #eee;\n}", ""]);
+exports.push([module.i, ".aa{position:relative;}.aa .bb{background-color:red;}.aa .bb .cc{color:blue}", ""]);
 
 // exports
 

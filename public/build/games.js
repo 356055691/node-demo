@@ -805,8 +805,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./style.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./style.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/postcss-loader/lib/index.js??ref--1-2!./style.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/postcss-loader/lib/index.js??ref--1-2!./style.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -824,7 +824,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, ".table {\n\twidth: 1010px;\n\theight: 510px;\n\tborder: solid 5px black;\n\tmargin: 20px auto;\n\tbackground-color: #ccc;\n\tposition: relative;\n\toverflow: hidden;\n}\n.item {\n\twidth: 6px;\n\theight: 6px;\n\tbackground-color: #fff;\n\tposition: absolute;\n\tborder: solid 2px #000;\n}\n.point {\n\twidth: 10px;\n\theight: 10px;\n\tbackground-color: #000;\n\tposition: absolute;\n}\n.btn-c {\n\theight: 100px;\n\tpadding: 0 100px;\n}\n.start-btn {\n\twidth: 100px;\n\theight: 30px;\n\tbackground-color: #000;\n\tcolor: #fdde2c;\n\tfloat: right;\n}\n.speed-label {\n\twidth: 150px;\n\theight: 30px;\n\tline-height: 30px;\n\ttext-align: right;\n\tcolor: #000;\n\tfloat: right;\n}\n.speed {\n\twidth: 96px;\n\theight: 26px;\n\tborder: solid 2px  #000;\n\tcolor: #000;\n\ttext-align: center;\n\tfloat: right;\n}\n.chan-speed {\n\twidth: 100px;\n\theight: 30px;\n\tbackground-color: #000;\n\tcolor: #fdde2c;\n\tfloat: right;\n\tmargin-right: 10px;\n}\n.score-c {\n\tfloat: left;\n}\n.score-c .tip {\n\tcolor: #000;\n\tfont-weight: bold;\n\tfont-size: 20px;\n}\n.score-c .score {\n\tcolor: red;\n\tfont-weight: bold;\n\tfont-size: 20px;\n}", ""]);
+exports.push([module.i, ".table{width:1010px;height:510px;border:5px solid #000;margin:20px auto;background-color:#ccc;position:relative;overflow:hidden}.item{width:6px;height:6px;background-color:#fff;border:2px solid #000}.item, .point{position:absolute}.point{width:10px;height:10px;background-color:#000}.btn-c{height:100px;padding:0 100px}.start-btn{width:100px;height:30px;background-color:#000;color:#fdde2c;float:right}.speed-label{width:150px;height:30px;line-height:30px;text-align:right}.speed, .speed-label{color:#000;float:right}.speed{width:96px;height:26px;border:2px solid #000;text-align:center}.chan-speed{width:100px;height:30px;background-color:#000;color:#fdde2c;float:right;margin-right:10px}.score-c{float:left}.score-c .tip{color:#000}.score-c .score, .score-c .tip{font-weight:700;font-size:20px}.score-c .score{color:red}", ""]);
 
 // exports
 

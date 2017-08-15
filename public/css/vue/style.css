@@ -1,3 +1,9 @@
-html, body {
-	background-color: #eee;
+.aa {
+	position: relative;
+	.bb {
+		background-color: red;
+		.cc {
+			color: blue;
+		}
+	}
 }
